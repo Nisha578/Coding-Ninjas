@@ -1,0 +1,12 @@
+public class Solution {
+    public static int sum(int[] nums) {
+           return sum(nums,0);
+        }
+    public static int sum(int[] nums, int startIndex) {
+         if(startIndex == nums.length) {
+            return 0;
+       }
+       return nums[startIndex] + sum(nums,startIndex+1);
+     }
+   }
+            
