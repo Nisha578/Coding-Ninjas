@@ -1,0 +1,14 @@
+public class Solution {
+   public static boolean checkNumber(int input[],int x,int si){
+       if(nums.length == si) {
+       return false;
+       }
+       if(nums[si] == x) {
+       return true;
+       }
+       return checkNumber(input,x,si+1);
+   }
+   public static boolean checkNumber(int input[],int x) {
+         return checkNumber(input,x,0);
+         }
+   }      
