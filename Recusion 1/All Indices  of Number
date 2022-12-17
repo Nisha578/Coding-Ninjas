@@ -20,3 +20,15 @@ public class Solution {
              return sa;
              }
 }             
+/* 
+dry run :
+              | 9 | 8 | 10 | 8 | 8 |
+                         |                      sa : [1,3,4]     temp : [1,3,4]
+                   | 8 | 10 | 8 | 8 |       
+                          |                     sa : [3,4]     temp : [3,4]
+                        | 10 | 8 | 8 |
+                              |                 sa : [3,4]     temp : [3,4]
+                              | 8 | 8 |
+                                |               sa : [4]     temp : [4]
+                                | 8 |              
+*/                                
