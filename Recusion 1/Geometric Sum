@@ -1,0 +1,21 @@
+publlic class Solution{
+        public static double findGeometricSum(int k){
+        if(k == -1){
+        return 0;
+        }
+        double a = findGeometricSum(k-1);
+        double ans = a + 1 / Math.pow(2,k);
+        return ans;
+        }
+}
+/* dry run:
+         k =       3
+                   |           ans = 1.875   a = 1.75
+                   2
+                   |           ans = 1.75    a = 1.5
+                   1
+                   |           ans = 1.5     a = 1.0
+                   0
+                   |           ans = 1.0     a = 0.0
+                   -1
+*/                   
