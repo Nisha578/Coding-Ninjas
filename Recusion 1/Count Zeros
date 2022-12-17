@@ -1,0 +1,31 @@
+public class Solution{
+        public static int countZerosRec(int input){
+        return countZerosRec(input,0);
+        }
+        public static int countZerosRec(int input,int a){
+        if(input % 10 == 0)
+        a++;
+        if(input / 10 == 0)
+        return a;
+        int smallAns = countZerosRec(input/10,a);
+        return smallAns;
+        }
+}
+/* 
+dry run :
+            12004000            
+                |              a: 1    smallAns : 5
+            1200400
+                |              a: 2    smallAns : 5
+             120040
+                |              a: 3    smallAns : 5 
+              12004
+                |              a: 3    smallAns : 5
+              1200
+                |              a: 4    smallAns : 5    
+               120
+                |              a: 5    smallAns : 5
+                12
+                |              a: 5    smallAns : 5
+                1       
+*/                
