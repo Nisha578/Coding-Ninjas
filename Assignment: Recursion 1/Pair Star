@@ -1,0 +1,18 @@
+public class Solution {
+       public static String addStars(String s) {
+         return addStars(s,s.length());
+       }
+       public static String addStar(String s,int c) {
+          if(c<=1) {
+           return s;
+          }
+          
+          String small = addStars(s.substring(1),c-1);
+          if(s.charAt(0) == small.charAt(0)) {
+             return s.charAt(0)+"*"+small;
+          }
+          else{
+          return s.charAt(0)+small;
+          }
+       }
+}       
