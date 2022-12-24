@@ -1,1 +1,15 @@
-
+public class Solution {
+       public static void mergeSort(int[] input) {
+         int p1 = input.length-1;
+         mergeSort(input,0,p1);
+       }
+       public static void mergeSort(int[] input,int start,int end) {
+       if(start > end) {
+       return;
+       }
+       int mid = start + (end-start) / 2;
+       mergeSort(input,start,mid);
+       mergeSort(input,mid+1,end);
+       merge(input,start,mid,end);
+       }
+       
