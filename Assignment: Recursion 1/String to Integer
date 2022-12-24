@@ -1,0 +1,11 @@
+public class Solution {
+    public static int convertStringToInt(String input) {
+        if(input.length() == 1){
+            return input.charAt(0) - '0';
+         }
+         double a = convertStringToInt(input.substring(1));
+         double b = input.charAt(0) - '0';
+         b = b * Math.pow(10,input.length()-1) + a;
+         return (int) b;
+     }
+}     
