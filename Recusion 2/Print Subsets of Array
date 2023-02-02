@@ -1,0 +1,26 @@
+public class Solution {
+       public static void printSubsets(int input[]) {
+              int[] output = new int[0];
+              printSubsets(input,0,output);
+       }
+       public static void printSubsets(int[] input,int startIndex,int[] output) {
+              if(startIndex == input.length) {
+                 for(int i : output) {
+                     System.out.print(i + " ");
+                 }
+                 System.out.println();
+                 return;
+              }
+              
+              printSubsets(input,startIndex + 1,output);
+              
+              int[] newoutput = new int[output.length + 1];
+              int j = 0;
+              for( ; j<output.length; j++) {
+                 newoutput[j] = output[j];
+              }
+              newoutput[j] = input[startIndex];
+              printSubsets(input,startIndex + 1,newoutput);
+       }
+}       
+               
