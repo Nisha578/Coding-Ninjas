@@ -20,7 +20,7 @@ public class Solution {
         
         for(int i = 0; i<smallAns.length; i++) {
         ans[k+i] = new int[smallAns[i].length + 1];
-        ans[k][0] = input[si];
+        ans[k+i][0] = input[si];
         for(int j = 1; j<=smallAns[i].length; j++) {
         ans[i+k][j] = smallAns[i][j-1];
         }
