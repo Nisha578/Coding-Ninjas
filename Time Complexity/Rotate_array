@@ -1,0 +1,17 @@
+public class solution {
+       public static void rotate(int[] arr,int d) {
+              int n = arr.length - 1;
+              rotateA(arr,0,n);
+              rotateA(arr,0,n-d);
+              rotateA(arr,n-d+1,n);
+       }
+       public static void rotateA(int[] arr,int s,int e) {
+           while(s < e) {
+                int temp = arr[s];
+                arr[s] = arr[e];
+                arr[e] = temp;
+                s++;
+                e--;
+           }
+       }
+}
