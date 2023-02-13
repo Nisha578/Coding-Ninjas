@@ -1,0 +1,26 @@
+public class solution {
+       public static void printIthNode(LinkedListNode<Integer> head, int i) {
+                  LinkedListNode<Integer> curr = head;
+                  int count =0;
+                  while(curr != null && count<i) {
+                        count++;
+                        curr = curr.next;
+                  }
+                  if(curr != null) {
+                     System.out.print(curr.data + " ");
+                  }
+       }
+}
+/*
+dry run :
+                      3 4 5 2 6 1 9 -1  curr = 3, count = 0, i=3
+                            |
+                       4 5 2 6 1 9 -1   curr = 4, count = 1, i=3
+                            |
+												5 2 6 1 9 -1   curr = 5, count = 2, i =3
+												    |
+													2 6 1 9 -1   curr = 2, count = 3, i= 3
+													
+						output : curr.data = 2
+						
+*/						
