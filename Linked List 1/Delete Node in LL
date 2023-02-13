@@ -1,0 +1,37 @@
+/****************************************************************
+
+	Following is the Node class already written for the Linked List
+
+	class LinkedListNode<T> {
+    	T data;
+    	LinkedListNode<T> next;
+    
+    	public LinkedListNode(T data) {
+        	this.data = data;
+    	}
+	}
+
+*****************************************************************/
+
+
+public class solution {
+       public static LinkedListNode<Integer> deleteNode(LinkedListNode<Integer> head,int pos) {
+              if(head == null) {
+                  return null;
+              }
+              if(pos == 0) {
+                head = head.next;
+              }
+              LinkedListNode<Integer> currHead = head;
+              int count = 0;
+              while(currHead != null && count<(pos-1)) {
+                    currHead = currHead.next;
+                    count++;
+              }
+              if(currHead == null || currHead.next == null) {
+                    return head;
+              }
+              currHead.next = currHead.next.next;
+              return head;
+       }
+}
