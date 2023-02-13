@@ -17,10 +17,10 @@ dry run :
                             |
                        4 5 2 6 1 9 -1   curr = 4, count = 1, i=3
                             |
-												5 2 6 1 9 -1   curr = 5, count = 2, i =3
-												    |
-													2 6 1 9 -1   curr = 2, count = 3, i= 3
+                         5 2 6 1 9 -1   curr = 5, count = 2, i =3
+                             |	
+                           2 6 1 9 -1   curr = 2, count = 3, i= 3
 													
-						output : curr.data = 2
+             output : curr.data = 2
 						
 */						
