@@ -1,0 +1,32 @@
+/*
+
+	Following is the Node class already written for the Linked List
+
+	class LinkedListNode<T> {
+    	T data;
+    	LinkedListNode<T> next;
+    
+    	public LinkedListNode(T data) {
+        	this.data = data;
+    	}
+	}
+
+*/
+
+public class solution {
+       public static LinkedListNode<Integer> removeDuplicates(LinkedListNode<Integer> head) {
+              if( head == null) {
+                return null;
+              }
+              LinkedListNode<Integer> curr = head;
+               while(curr.next != null) {
+                     if(curr.data.equals(curr.next.data)) {
+                          curr.next = curr.next.next;
+                     }
+                     else {
+                       curr = curr.next;
+                     }  
+               }
+             return head;  
+       }
+}
