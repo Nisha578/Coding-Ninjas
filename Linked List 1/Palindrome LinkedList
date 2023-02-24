@@ -1,0 +1,67 @@
+/*
+
+	Following is the Node class already written for the Linked List
+
+	class LinkedListNode<T> {
+    	T data;
+    	LinkedListNode<T> next;
+    
+    	public LinkedListNode(T data) {
+        	this.data = data;
+    	}
+	}
+
+*/
+
+public class solution {
+       public static LinkedListNode<Integer> reverseLinkedList(LinkedListNode<Integer> head) {
+              
+              LinkedListNode<Integer> curr = head;
+              LinkedListNode<Integer> fwd = null;
+              LinkedListNode<Integer> prev = null;
+              
+              while(curr != null) {
+                   fwd = curr.next;
+                   curr.next = prev;
+                   prev = curr;
+                   curr = fwd;
+              }
+            return prev;
+       }
+       
+       public static boolean isPalindrome(LinkedListNode<Integer> head) {
+               if(head == null || head.next == null) {
+                     return true;
+               }
+               LinkedListNode<Integer> fast = head;
+               LinkedListNode<Integer> slow = head;
+               while(fast.next != null && fast.next.next != null) {
+                      fast = fast.next.next;
+                      slow = slow.next;
+               }
+               LinkedListNode<Integer> secondHead = slow.next;
+               slow.next = null;
+               secondHead = reverseLinkedList(secondHead);
+               
+               LinkedListNode<Integer> firstSublist = secondHead;
+               LinkedListNode<Integer> secondSublist = head;
+               
+               while(firstSublist != null) {
+                      if(firstSublist.data != secondSublist.data) {
+                           return false;
+                      }
+                      firstSublist = firstSublist.next;
+                      secondSublist = secondSublist.next;
+               }
+               firstSublist = head;
+               secondHead = reverseLinkedList(secondHead);
+               
+               while(firstSublist.next != null) {
+                    firstSublist = firstSublist.next;
+              }
+              
+              firstSublist.next = secondSublist;
+              return true;
+               
+       }
+}
