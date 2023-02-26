@@ -1,0 +1,34 @@
+/*
+
+    Following is the Node class already written for the Linked List
+
+    class LinkedListNode<T> {
+        T data;
+        LinkedListNode<T> next;
+
+        public LinkedListNode(T data) {
+            this.data = data;
+        }
+    }
+
+*/
+
+public class solution {
+       public static LinkedListNode<Integer> reverse_l(LinkedListNode<Integer> head) {
+       
+              LinkedListNode<Integer> prev = null;
+              LinkedListNode<Integer> curr = head;
+              LinkedListNode<Integer> fwd = null;
+              
+              while(curr != null){
+                 fwd = curr.next;
+                 curr.next = prev;
+                 prev = curr;
+                 curr = next;
+              }
+             
+              head = prev;
+              return head;
+              
+       }
+}
