@@ -1,0 +1,28 @@
+public class Solution {
+     
+        public static boolean isBalanced(String expression) {
+                  
+                  boolean flag = true;
+                  int count = 0;
+                  
+                  for(int i = 0; i<expression.length(); i++) {
+                        if(expression.charAt(i) == '(') {
+                            count++;
+                        }
+                        else{
+                           count--;
+                        }
+                        if(count<0) {
+                            flag = false;
+                            break;
+                        }
+                  }
+                  
+                  if(count != 0) {
+                      flag = false;
+                  }    
+                  
+                  return flag;
+         }
+     
+}
