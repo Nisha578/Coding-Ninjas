@@ -1,0 +1,20 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Solution {
+ 
+       public static void reverseQueue(Queue<Integer> q1) {
+       
+              if(q1.isEmpty()) {
+                     return;
+              }
+              int temp = q1.poll();
+              
+              reverseQueue(q1);      /*storing values of temp in a recursion call stack to be added in the queue in reverse order */
+                                      
+              
+              q1.add(temp);
+       
+       }
+ 
+}
