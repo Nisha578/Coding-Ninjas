@@ -9,6 +9,8 @@
 			children = new ArrayList<TreeNode<T>>();
 		}
 	}*/
+	
+public class Solution {	
   
   public static void printLevelWise(TreeNode<Integer> root) {
   
@@ -31,4 +33,7 @@
            
       }
   
+    }
+    
   }
+  
