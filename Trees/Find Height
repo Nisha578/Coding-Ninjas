@@ -1,0 +1,30 @@
+/*	TreeNode structure 
+	 * 
+	 * class TreeNode<T> {
+		T data;
+		ArrayList<TreeNode<T>> children;
+
+		TreeNode(T data){
+			this.data = data;
+			children = new ArrayList<TreeNode<T>>();
+		}
+	}*/
+  
+  public class Solution {
+  
+          public static int getHeight(TreeNode<Integer> root) {
+                 if(root == null) {
+                     return 0;
+                 }
+                 
+                 int height = 0;
+                 for(TreeNode<Integer> children : root.children) {
+                     int ht = getHeight(children);
+                     height = Math.max(ht,height);
+                 }
+                 height = height + 1;
+                 return height;
+          
+          }
+  
+  }
