@@ -1,0 +1,55 @@
+/*	TreeNode structure 
+ * 
+ * class TreeNode<T> {
+		T data;
+		ArrayList<TreeNode<T>> children;
+
+		TreeNode(T data){
+			this.data = data;
+			children = new ArrayList<TreeNode<T>>();
+		}
+	}*/
+  
+  public class Solution {
+    
+                public static TreeNode<Integer> lar = null;
+                public static TreeNode<Integer> sec = null;
+                public static int largest = 0;
+                public static int second = 0;
+             
+         public static TreeNode<Integer> findSecondLargest(TreeNode<Integer> root) {
+                 
+                if(root == null) {
+                     return sec;
+                }
+                
+                if(root.children.size() == 0) {
+                       if(root.data > largest) {
+                          second = largest;
+                          sec = lar;
+                          largest = root.data;
+                          lar = root;
+                       }
+                       else if(root.data < largest && root.data > second) {
+                             second = root.data;
+                             sec = root;
+                       }
+                       return sec;
+                }
+                 for(int i = 0; i<root.children.size(); i++) {
+                     TreeNode<Integer> temp = findSecondLargest(root.children.get(i));
+                 }
+                 if(root.data > largest) {
+                      second = largest;
+                      sec = lar;
+                      largest = root.data;
+                      lar = root;
+                 }
+                 else if(root.data < largest && root.data > second) {
+                       second = root.data;
+                       sec = root;
+                 }
+                 return sec;
+         }
+    
+  }     
