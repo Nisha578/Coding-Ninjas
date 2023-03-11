@@ -18,6 +18,46 @@
 
 public class Solution {
 
-       
+       public static BinaryTreeNode<Integer> buildTreeHelper(int[] postOrder,int[] inOrder,int siPo,int eiPo,int siIn,int eiIn) {
+              if(siIn > eiIn) {
+	           return null;
+	      }
+	      int rootData = postOrder[eiPo];
+	      BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(rootData);
+	      int rootIndex = -1;
+	      for(int i = siIn; i<=eiIn; i++) {
+	             if(inOrder[i] == rootData) {
+		           rootIndex = i;
+			   break;
+		     }
+	      }
+	      
+	      int siPosLeft = siPo;
+	      int eiPosRight = eiPo - 1;
+	      
+	      int siInLeft = siIn;
+	      int eiInLeft = rootIndex - 1;
+	      int siInRight = rootIndex + 1;
+	      int eiInRight = eiIn;
+	      
+	      int leftLength = eiInLeft = siInLeft + 1;
+	      
+	      int eiPosLeft = siPosLeft + leftLength - 1;
+	      int siPosRight = eiPosLeft + 1;
+	      
+	      BinaryTreeNode<Integer> left = buildTreeHelper(postOrder,inOrder,siPosLeft,eiPosLeft,siInleft,eiInLeft);
+	      BinaryTreeNode<Integer> right = buildTreeHelper(postOrder,inOrder,siPosRight,eiPosRight,siInRight,eiInRight);
+	      root.left = left;
+	      root.right = right;
+	      
+	      return root;
+	      
+	      
+       }
+
+       public static BinaryTreeNode<Integer> buildTree(int[] postOrder,int[] inOrder) {
+              BinaryTreeNode<Integer> root = buildTreeHelper(postOrder,inOrder,0,postOrder.length-1,0,inOrder.length-1);
+	      return root;
+       }
 
 }
