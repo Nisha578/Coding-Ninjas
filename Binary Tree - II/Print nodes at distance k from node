@@ -1,0 +1,28 @@
+/*	Binary Tree Node class
+ * 
+ * class BinaryTreeNode<T> {
+		T data;
+		BinaryTreeNode<T> left;
+		BinaryTreeNode<T> right;
+		
+		public BinaryTreeNode(T data) {
+			this.data = data;
+		}
+	}
+	*/
+  
+  public class Solution {
+     
+          public static void nodesAtDistanceK(BinaryTreeNode<Integer> root, int node, int k) {
+                  
+                 int x = print(root,k,node); 
+          }
+          
+          public static int print(BinaryTreeNode<Integer> root,int k, int elem) {
+                 if(root == null) {
+                      return -1;
+                 }
+                 
+          }
+     
+  }
