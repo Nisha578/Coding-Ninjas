@@ -1,0 +1,27 @@
+	/*
+	 * Binary Tree Node class
+	 * 
+	 * class BinaryTreeNode<T> { T data; BinaryTreeNode<T> left; BinaryTreeNode<T>
+	 * right;
+	 * 
+	 * public BinaryTreeNode(T data) { this.data = data; } }
+	 */
+   
+   public class Solution {
+   
+           static int sum = 0;
+           public static void replaceWithLargerNodesSum(BinaryTreeNode<Integer> root) {
+                       replaceWithLargerNodesSumm(root);
+           }
+           
+           public static void replaceWithLargerNodesSumm(BinaryTreeNode<Integer> root) {
+                   if(root == null) { 
+                       return;
+                   }
+                   replaceWithLargerNodesSumm(root.right);
+                   sum = sum + root.data;
+                   root.data = sum;
+                   replaceWithLargerNodesSumm(root.left);
+           }
+   
+   }
